@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+
+        Console.Write("Nombre completo: ");
+        string nombre = Console.ReadLine();
+
+        Console.Write("Edad: ");
+        int edad = int.Parse(Console.ReadLine());
+
+        Console.Write("Peso (kg): ");
+        double peso = double.Parse(Console.ReadLine());
+
+        Console.Write("Estatura (m): ");
+        double estatura = double.Parse(Console.ReadLine());
+
+        Console.Write("¿Tiene seguro médico? (S/N): ");
+        string respuestaSeguro = Console.ReadLine().ToUpper();
+        bool tieneSeguro = (respuestaSeguro == "S");
+
+        // --- 2. Cálculo del IMC ---
+        double imc = peso / (estatura * estatura);
+
+        // --- 3. Mostrar Ficha Médica ---
+        Console.Clear();
+        Console.WriteLine("************************************");
+        Console.WriteLine("          FICHA MÉDICA             ");
+        Console.WriteLine("************************************");
+        Console.WriteLine($"Paciente:          {nombre}");
+        Console.WriteLine($"Edad:              {edad} años");
+        Console.WriteLine($"Peso:              {peso} kg");
+        Console.WriteLine($"Estatura:          {estatura} m");
+        Console.WriteLine($"Posee Seguro:      {(tieneSeguro ? "Sí" : "No")}");
+        Console.WriteLine("------------------------------------");
+        Console.WriteLine($"IMC:               {imc:F2}");
+        Console.WriteLine("************************************");
+
+        Console.WriteLine("\nPresione cualquier tecla para salir...");
+        Console.ReadKey();
+    }
+}
