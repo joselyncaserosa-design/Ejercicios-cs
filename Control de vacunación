@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int totalVacunas = 0;
+        int vacunasDia;
+        double promedio;
+
+        Console.WriteLine("--- CONTROL DE VACUNACIÓN SEMANAL ---");
+        Console.WriteLine("Ingrese la cantidad de vacunas aplicadas:");
+
+        for (int i = 1; i <= 7; i++)
+        {
+            Console.Write("Día " + i + ": ");
+            vacunasDia = int.Parse(Console.ReadLine());
+            
+            totalVacunas = totalVacunas + vacunasDia;
+        }
+
+        promedio = (double)totalVacunas / 7;
+
+        Console.WriteLine("\n------- REPORTE FINAL -------");
+        Console.WriteLine("Total de vacunas: " + totalVacunas);
+        Console.WriteLine("Promedio diario: " + promedio.ToString("N2"));
+        Console.WriteLine("-----------------------------");
+
+        Console.ReadKey();
+    }
+}
