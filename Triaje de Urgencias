@@ -1,0 +1,32 @@
+using System;
+
+class TriajeUrgencias
+{
+    static void Main()
+    {
+        double temperatura;
+        int presion;
+
+        Console.Write("Ingrese la temperatura corporal: ");
+        temperatura = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingrese la presión sistólica: ");
+        presion = Convert.ToInt32(Console.ReadLine());
+
+        if (temperatura > 39 || presion > 180)
+        {
+            Console.WriteLine("Color: ROJO (Crítico)");
+            Console.WriteLine("Recomendación: Atención inmediata en sala de reanimación.");
+        }
+        else if (temperatura > 38 || presion > 140)
+        {
+            Console.WriteLine("Color: AMARILLO (Urgente)");
+            Console.WriteLine("Recomendación: Evaluación médica en los próximos 15-30 minutos.");
+        }
+        else
+        {
+            Console.WriteLine("Color: VERDE (Estable)");
+            Console.WriteLine("Recomendación: Puede esperar turno o acudir a consulta externa.");
+        }
+    }
+}
